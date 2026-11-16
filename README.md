@@ -47,7 +47,7 @@ dataset.yaml
 
 Each label file must have the same base filename as its image and contain
 YOLO-format rows: `class_id x_center y_center width height`, with normalized
-coordinates. The included dataset uses these classes:
+coordinates. The downloaded training dataset uses these classes:
 
 ```text
 0: helmet
@@ -55,11 +55,11 @@ coordinates. The included dataset uses these classes:
 ```
 
 The bundled model predicts helmet status from two classes. Models trained on
-the included dataset instead detect `helmet` and `motorcycle`; for those
+that dataset instead detect `helmet` and `motorcycle`; for those
 weights, the app estimates **No helmet** when no helmet is associated with a
 motorcycle. That estimate is not a separately trained no-helmet class, so
-missed or occluded helmets can cause false warnings. The included dataset has
-no explicit no-helmet class. For stronger results, use rider-level
+missed or occluded helmets can cause false warnings. The dataset has no
+explicit no-helmet class. For stronger results, use rider-level
 `with_helmet` and `without_helmet` annotations and validate against images
 representative of your deployment.
 
@@ -71,12 +71,12 @@ the layout above. The dataset is licensed under CC BY 4.0; its attribution is
 included in `dataset/ATTRIBUTION.txt`.
 
 The downloaded dataset contains `helmet` and `motorcycle` classes, not an
-explicit no-helmet class. Training also requires local initial YOLO weights;
-pass their location with `--model` if `yolov8n.pt` is not present. Then train
-and validate:
+explicit no-helmet class. Training also requires local initial YOLO weights.
+Download `yolov8n.pt` into the repository root, or pass another local
+checkpoint using `--model`. Then train and validate:
 
 ```powershell
-.\venv\Scripts\python.exe train.py
+.\.venv\Scripts\python.exe train.py
 ```
 
 Training outputs are written under `runs/` and are not included in this
@@ -85,7 +85,7 @@ repository.
 Optional training settings:
 
 ```powershell
-.\venv\Scripts\python.exe train.py --epochs 100 --imgsz 640 --batch 8 --device 0
+.\.venv\Scripts\python.exe train.py --epochs 100 --imgsz 640 --batch 8 --device 0
 ```
 
 Use `--device cpu` to force CPU training or `--device auto` to let Ultralytics
