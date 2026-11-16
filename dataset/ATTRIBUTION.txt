@@ -1,0 +1,8 @@
+Dataset: HCMC Whole, version 2
+Source: https://universe.roboflow.com/segmentation-z6r2a/hcmc-whole/dataset/2
+License: CC BY 4.0
+Attribution: HCMC Whole dataset by segmentation-z6r2a, hosted on Roboflow Universe.
+
+This project stages the color `helmet_original` train, validation, and test
+splits. The source labels are YOLO object detections: class 0 is `helmet` and
+class 1 is `motorcycle`.

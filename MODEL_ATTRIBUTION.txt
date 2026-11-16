@@ -1,0 +1,11 @@
+Bundled helmet-status weights: best.pt
+
+Source: https://huggingface.co/nnsohamnn/helmet-detection-yolo11
+Model: YOLOv11s, 80-epoch checkpoint
+Classes: With Helmet, Without Helmet
+License metadata on the model page: MIT (no standalone license text was present)
+SHA-256: 511e40f72464ec997f40e083368b6dc2abc97bf34cfeaee7e065b9c57c12b01b
+
+The model page does not document its training-data provenance. Its performance
+has not been independently benchmarked for this project; inspect predictions
+and validate with deployment-specific images before relying on them.
